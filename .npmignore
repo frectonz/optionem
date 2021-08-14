@@ -2,6 +2,8 @@ examples
 node_modules
 src
 .gitignore
+API.md
+jest.config.js
 LICENSE
 README.md
 tsconfig.json
