@@ -1,3 +1,7 @@
-node_modules
 examples
+node_modules
 src
+.gitignore
+LICENSE
+README.md
+tsconfig.json
