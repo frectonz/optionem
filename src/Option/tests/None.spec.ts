@@ -118,13 +118,6 @@ describe("None", () => {
     expect(none.xor(none)).toStrictEqual(none);
   });
 
-  it("has a insert method", () => {
-    const none = new None();
-    const some = none.insert(10);
-
-    expect(some).toStrictEqual(new Some(10));
-  });
-
   it("has a match function", () => {
     const option: Option<number> = new None();
 

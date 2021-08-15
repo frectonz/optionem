@@ -1,4 +1,5 @@
-import { MatchFunction, Option, None } from ".";
+import { None } from "./None";
+import { MatchFunction, Option } from "./Option";
 
 export class Some<T> implements Option<T> {
   private value: T;
@@ -76,11 +77,6 @@ export class Some<T> implements Option<T> {
       return new None();
     }
     return new Some(this.value);
-  }
-
-  insert(value: T): Option<T> {
-    this.value = value;
-    return this;
   }
 
   match<U>(matches: MatchFunction<T, U>): U {

@@ -1,4 +1,4 @@
-import { MatchFunction, Option, Some } from ".";
+import { MatchFunction, Option } from "./Option";
 
 export class None<T> implements Option<T> {
   isSome() {
@@ -66,10 +66,6 @@ export class None<T> implements Option<T> {
 
   xor(opt: Option<T>): Option<T> {
     return this.or(opt);
-  }
-
-  insert(value: T): Option<T> {
-    return new Some(value);
   }
 
   match<U>(matches: MatchFunction<T, U>): U {

@@ -126,13 +126,6 @@ describe("Some", () => {
     expect(some.xor(new Some(50))).toStrictEqual(none);
   });
 
-  it("has a insert method", () => {
-    const some = new Some(10);
-    some.insert(100);
-
-    expect(some).toStrictEqual(new Some(100));
-  });
-
   it("has a match function", () => {
     const option: Option<number> = new Some(10);
 

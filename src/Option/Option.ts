@@ -25,8 +25,6 @@ export interface Option<T> {
 
   xor(opt: Option<T>): Option<T>;
 
-  insert(value: T): Option<T>;
-
   match<U>(funcs: MatchFunction<T, U>): U;
 }
 
