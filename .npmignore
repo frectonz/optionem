@@ -8,3 +8,4 @@ LICENSE
 README.md
 tsconfig.json
 .cache
+rollup.config.js
