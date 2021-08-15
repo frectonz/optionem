@@ -124,15 +124,6 @@ If the variant is
 - `Some`
   returns `None` if `opt` is some otherwise it returns `Some`.
 
-### `option.insert(value: T): Option<T>`
-
-If the variant is
-
-- `None`
-  returns the parameter `value` wrapped with a `Some` .
-- `Some`
-  sets the value to the value from the parameter and returns it self.
-
 ### `match<U>(funcs: MatchFunction<T, U>): U`
 
 ```typescript
