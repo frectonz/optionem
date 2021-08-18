@@ -1,4 +1,7 @@
-[![npm version](https://badge.fury.io/js/optionem.svg)](https://badge.fury.io/js/optionem)
+![npm](https://img.shields.io/npm/v/optionem)
+![npm bundle size](https://img.shields.io/bundlephobia/min/optionem)
+![NPM](https://img.shields.io/npm/l/optionem)
+![npm](https://img.shields.io/npm/dt/optionem)
 
 # Optionem
 
