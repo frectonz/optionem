@@ -43,8 +43,6 @@ result.match({
 
 The api of this library is made to resemble the one in rust.
 
-This library can only be used with typescript because `Option<T>` is an interface.
-
 This library can be used for
 
 - Network Requests
