@@ -73,6 +73,6 @@ This project is licensed under the [MIT](/LICENSE) license.
 
 # Todo
 
-- [*] Implement Option
+- [x] Implement Option
 - [ ] Support async functions in methods of option
 - [ ] Implement Result
