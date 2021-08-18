@@ -70,3 +70,9 @@ An option has two variants that implement the `Option<T>` interface
 # License
 
 This project is licensed under the [MIT](/LICENSE) license.
+
+# Todo
+
+[*] Implement Option
+[ ] Support async functions in methods of option
+[ ] Implement Result
