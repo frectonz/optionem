@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/optionem.svg)](https://badge.fury.io/js/optionem)
+
 # Optionem
 
 A library for people with options and results.
