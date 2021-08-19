@@ -42,7 +42,16 @@ If the variant is
 - `Err`
   returns the `value`.
 
-## 9. `result.mapOrElse<U>(errFn: (err: E) => U, okFn: (value: T) => U): U`
+## 9. `result.mapErr<U>(fn: (error: E) => U): Result<T, U>`
+
+If the variant is
+
+- `Ok`
+  returns an `Ok` with the value contained in the `result`.
+- `Err`
+  returns the `Err` with the error returned from `fn`.
+
+## 10. `result.mapOrElse<U>(errFn: (err: E) => U, okFn: (value: T) => U): U`
 
 If the variant is
 
@@ -51,7 +60,7 @@ If the variant is
 - `Err`
   returns the value returned from `errFn`.
 
-## 10. `result.and<U>(res: Result<U, E>): Result<U, E>`
+## 11. `result.and<U>(res: Result<U, E>): Result<U, E>`
 
 If the variant is
 
@@ -60,7 +69,7 @@ If the variant is
 - `Err`
   returns an `Err` containing the error from `result`.
 
-## 11. `result.andThen<U>(fn: (value: T) => Result<U, E>): Result<U, E>`
+## 12. `result.andThen<U>(fn: (value: T) => Result<U, E>): Result<U, E>`
 
 If the variant is
 
@@ -69,7 +78,7 @@ If the variant is
 - `Err`
   returns an `Err` containing the error from `result`.
 
-## 12. `result.or<F>(res: Result<T, F>): Result<T, F>`
+## 13. `result.or<F>(res: Result<T, F>): Result<T, F>`
 
 If the variant is
 
@@ -78,7 +87,7 @@ If the variant is
 - `Err`
   returns `res`.
 
-## 13. `result.orElse<F>(fn: (err: E) => Result<T, F>): Result<T, F>`
+## 14. `result.orElse<F>(fn: (err: E) => Result<T, F>): Result<T, F>`
 
 If the variant is
 
@@ -87,7 +96,7 @@ If the variant is
 - `Err`
   returns the result returned from calling `fn`.
 
-## 14. `result.unwrapOr(value: T): T`
+## 15. `result.unwrapOr(value: T): T`
 
 If the variant is
 
@@ -96,7 +105,7 @@ If the variant is
 - `Err`
   returns `value`.
 
-## 15. `result.unwrapOrElse(fn: (err: E) => T): T`
+## 16. `result.unwrapOrElse(fn: (err: E) => T): T`
 
 If the variant is
 
@@ -105,7 +114,7 @@ If the variant is
 - `Err`
   returns the value returned from calling `fn` with the error.
 
-## 16. `result.unwrap(): T`
+## 17. `result.unwrap(): T`
 
 If the variant is
 
@@ -114,7 +123,7 @@ If the variant is
 - `Err`
   throws an error.
 
-## 17. `result.unwrapErr(): E`
+## 18. `result.unwrapErr(): E`
 
 If the variant is
 
@@ -123,7 +132,7 @@ If the variant is
 - `Err`
   returns the error contained in the `Err`.
 
-## 18. `result.expect(msg: string): T`
+## 19. `result.expect(msg: string): T`
 
 If the variant is
 
@@ -132,7 +141,7 @@ If the variant is
 - `Err`
   throws an error with message `msg`.
 
-## 19. `result.expectErr(msg: string): E`
+## 20. `result.expectErr(msg: string): E`
 
 If the variant is
 
@@ -140,3 +149,19 @@ If the variant is
   throws an error with message `msg`.
 - `Err`
   returns the error contained in the `Err`.
+
+## 21. `result.match<U>(funcs: ResultMatchFunction<T, E, U>): U`
+
+```typescript
+export interface ResultMatchFunction<T, E, U> {
+  Ok: (value: T) => U;
+  Err: (error: E) => U;
+}
+```
+
+If the variant is
+
+- `Ok`
+  it calls `funcs.Ok(value)`
+- `Err`
+  it calls `funcs.Err(error);`
