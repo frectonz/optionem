@@ -25,10 +25,10 @@ export interface Option<T> {
 
   xor(opt: Option<T>): Option<T>;
 
-  match<U>(funcs: MatchFunction<T, U>): U;
+  match<U>(funcs: OptionMatchFunction<T, U>): U;
 }
 
-export interface MatchFunction<T, U> {
+export interface OptionMatchFunction<T, U> {
   None: () => U;
   Some: (value: T) => U;
 }

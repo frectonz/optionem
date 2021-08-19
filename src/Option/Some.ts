@@ -1,5 +1,5 @@
 import { None } from "./None";
-import { MatchFunction, Option } from "./Option";
+import { OptionMatchFunction, Option } from "./Option";
 
 export class Some<T> implements Option<T> {
   private value: T;
@@ -79,7 +79,7 @@ export class Some<T> implements Option<T> {
     return new Some(this.value);
   }
 
-  match<U>(matches: MatchFunction<T, U>): U {
+  match<U>(matches: OptionMatchFunction<T, U>): U {
     return matches.Some(this.value);
   }
 }
