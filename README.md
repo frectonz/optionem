@@ -65,7 +65,7 @@ An option has two variants that implement the `Option<T>` interface
 
 # API
 
-[Check out the API](/API.md)
+[Check out the API](/docs)
 
 # License
 
