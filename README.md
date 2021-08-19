@@ -75,4 +75,4 @@ This project is licensed under the [MIT](/LICENSE) license.
 
 - [x] Implement Option
 - [ ] Support async functions in methods of option
-- [ ] Implement Result
+- [x] Implement Result
