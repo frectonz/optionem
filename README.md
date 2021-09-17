@@ -7,6 +7,8 @@
 
 A library for people with options and results.
 
+![Optionem](/optionem.png)
+
 ## Install
 
 ```sh
