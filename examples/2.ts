@@ -1,18 +1,18 @@
 import { None, Option, Some } from "optionem";
 
-interface OptionMap<K, V> {
+interface IOptionMap<K, V> {
   get(key: K): Option<V>;
   set(key: K, value: V): void;
 }
 
-class OptionObjMap<K, V> implements OptionMap<K, V> {
-  private store: object;
+class OptionMap<K, V> implements IOptionMap<K, V> {
+  private store: Map<K, V>;
   constructor() {
-    this.store = {};
+    this.store = new Map<K, V>();
   }
 
   get(key: K): Option<V> {
-    const value = this.store[String(key)];
+    const value = this.store.get(key);
 
     if (value !== undefined) {
       return new Some(value);
@@ -22,12 +22,12 @@ class OptionObjMap<K, V> implements OptionMap<K, V> {
   }
 
   set(key: K, value: V): void {
-    this.store[String(key)] = value;
+    this.store.set(key, value);
   }
 }
 
 export default function main() {
-  const map = new OptionObjMap<string, number>();
+  const map = new OptionMap<string, number>();
 
   map.set("key1", 10);
 
