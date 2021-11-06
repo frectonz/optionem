@@ -83,7 +83,7 @@ describe("Some", () => {
 
   it("has an andThen method", () => {
     const sq = (x: number) => new Some(x * x);
-    const nope = (_x: number): Option<number> => new None();
+    const nope = (): Option<number> => new None();
 
     const x = new Some(2);
     const y = x.andThen(sq).andThen(sq);

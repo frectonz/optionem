@@ -138,10 +138,10 @@ describe("Err", () => {
     const err: Result<number, number> = new Err(2);
 
     const x: string = err.match({
-      Ok(_val: number) {
+      Ok() {
         return "ok";
       },
-      Err(_err: Number) {
+      Err() {
         return "err";
       },
     });

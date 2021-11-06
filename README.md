@@ -1,9 +1,9 @@
+# Optionem
+
 ![npm](https://img.shields.io/npm/v/optionem)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/optionem)
 ![NPM](https://img.shields.io/npm/l/optionem)
 ![npm](https://img.shields.io/npm/dt/optionem)
-
-# Optionem
 
 A library for people with options and results.
 
@@ -105,15 +105,15 @@ A result has two variants that implement the `Result<T, E>` interface
 - Ok
 - Err
 
-# API
+## API
 
 [Check out the API](/docs)
 
-# License
+## License
 
 This project is licensed under the [MIT](/LICENSE) license.
 
-# Todo
+## Todo
 
 - [x] Implement Option
 - [ ] Support async functions in methods of option

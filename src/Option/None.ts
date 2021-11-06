@@ -33,23 +33,23 @@ export class None<T> implements Option<T> {
     return new None();
   }
 
-  mapOr<U>(x: U, _fn: (value: T) => U): U {
+  mapOr<U>(x: U): U {
     return x;
   }
 
-  mapOrElse<U>(defaultFn: () => U, _fn: (value: T) => U): U {
+  mapOrElse<U>(defaultFn: () => U): U {
     return defaultFn();
   }
 
-  and<U>(_opt: Option<U>): Option<U> {
+  and<U>(): Option<U> {
     return new None();
   }
 
-  andThen<U>(_fn: (value: T) => Option<U>): Option<U> {
+  andThen<U>(): Option<U> {
     return new None();
   }
 
-  filter(_fn: (value: T) => boolean): Option<T> {
+  filter(): Option<T> {
     return new None();
   }
 

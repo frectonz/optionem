@@ -64,12 +64,12 @@ export class Some<T> implements Option<T> {
     }
   }
 
-  or(_opt: Option<T>): Option<T> {
+  or(): Option<T> {
     return new Some(this.value);
   }
 
-  orElse(fn: () => Option<T>): Option<T> {
-    return this.or(fn());
+  orElse(): Option<T> {
+    return this.or();
   }
 
   xor(opt: Option<T>): Option<T> {

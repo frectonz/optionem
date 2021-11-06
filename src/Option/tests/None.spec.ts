@@ -68,11 +68,11 @@ describe("None", () => {
   });
 
   it("has an and method", () => {
-    const x = new None();
+    const x: Option<number> = new None();
     const y: Option<string> = new Some("world");
     const z = x.and(y);
 
-    const i = new None();
+    const i: Option<number> = new None();
     const j: Option<string> = new None();
     const k = i.and(j);
 

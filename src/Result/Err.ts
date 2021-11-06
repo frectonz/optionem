@@ -15,7 +15,7 @@ export class Err<T, E> implements Result<T, E> {
     return true;
   }
 
-  contains(_value: T): boolean {
+  contains(): boolean {
     return false;
   }
 
@@ -31,15 +31,15 @@ export class Err<T, E> implements Result<T, E> {
     return new Some(this.error);
   }
 
-  map<U>(_fn: (value: T) => U): Result<U, E> {
+  map<U>(): Result<U, E> {
     return new Err(this.error);
   }
 
-  mapOr<U>(value: U, _fn: (value: T) => U): U {
+  mapOr<U>(value: U): U {
     return value;
   }
 
-  mapOrElse<U>(errFn: (err: E) => U, _okFn: (value: T) => U): U {
+  mapOrElse<U>(errFn: (err: E) => U): U {
     return errFn(this.error);
   }
 
@@ -47,11 +47,11 @@ export class Err<T, E> implements Result<T, E> {
     return new Err(fn(this.error));
   }
 
-  and<U>(_err: Result<U, E>): Result<U, E> {
+  and<U>(): Result<U, E> {
     return new Err(this.error);
   }
 
-  andThen<U>(_fn: (value: T) => Result<U, E>): Result<U, E> {
+  andThen<U>(): Result<U, E> {
     return new Err(this.error);
   }
 
@@ -83,7 +83,7 @@ export class Err<T, E> implements Result<T, E> {
     throw new Error(msg);
   }
 
-  expectErr(_msg: string): E {
+  expectErr(): E {
     return this.error;
   }
 

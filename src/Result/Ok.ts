@@ -19,7 +19,7 @@ export class Ok<T, E> implements Result<T, E> {
     return this.value === value;
   }
 
-  containsErr(_err: E): boolean {
+  containsErr(): boolean {
     return false;
   }
 
@@ -43,7 +43,7 @@ export class Ok<T, E> implements Result<T, E> {
     return okFn(this.value);
   }
 
-  mapErr<U>(_fn: (error: E) => U): Result<T, U> {
+  mapErr<U>(): Result<T, U> {
     return new Ok(this.value);
   }
 
@@ -55,19 +55,19 @@ export class Ok<T, E> implements Result<T, E> {
     return fn(this.value);
   }
 
-  or<F>(_res: Result<T, F>): Result<T, F> {
+  or<F>(): Result<T, F> {
     return new Ok(this.value);
   }
 
-  orElse<F>(_fn: (err: E) => Result<T, F>): Result<T, F> {
+  orElse<F>(): Result<T, F> {
     return new Ok(this.value);
   }
 
-  unwrapOr(_value: T): T {
+  unwrapOr(): T {
     return this.value;
   }
 
-  unwrapOrElse(_fn: (err: E) => T): T {
+  unwrapOrElse(): T {
     return this.value;
   }
 
@@ -79,7 +79,7 @@ export class Ok<T, E> implements Result<T, E> {
     return this.expectErr("Found a Ok in the Result");
   }
 
-  expect(_msg: string): T {
+  expect(): T {
     return this.value;
   }
 
