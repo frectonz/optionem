@@ -32,7 +32,6 @@
     "prepare": "yarn build",
     "coverage": "jest --coverage",
     "build": "NODE_OPTIONS='--no-deprecation' rollup -c",
-    "clean": "rm -rf coverage dist .cache examples/*.js",
-    "example": "tsc ./examples/index.ts && node ./examples/index.js"
+    "clean": "rm -rf coverage dist .cache examples/dist"
   }
 }
